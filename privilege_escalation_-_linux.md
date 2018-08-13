@@ -400,7 +400,7 @@ If you have access to an account with sudo-rights but you don't have its passwor
 
 ## Exploiting Capabilities
 
-Capabilities provide fine-grained control over superuser permissions, allowing use of the root user to be avoided. Software developers are encouraged to replace uses of the powerful [https://en.wikipedia.org/wiki/Setuid](setuid) attributed in a system binary with a more minimal set of capabilities.
+Capabilities provide fine-grained control over superuser permissions, allowing use of the root user to be avoided. Software developers are encouraged to replace uses of the powerful setuid attributed in a system binary with a more minimal set of capabilities.
 
 **Setting/Getting capabilities**
 
