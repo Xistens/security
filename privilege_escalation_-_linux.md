@@ -398,7 +398,28 @@ int main()
 
 If you have access to an account with sudo-rights but you don't have its password you can install a keylogger to get it.
 
+## Exploiting Capabilities
 
+Capabilities provide fine-grained control over superuser permissions, allowing use of the root user to be avoided. Software developers are encouraged to replace uses of the powerful [https://en.wikipedia.org/wiki/Setuid] setuid attributed in a system binary with a more minimal set of capabilities.
+
+**Setting/Getting capabilities**
+
+You can force capabilities upon programs using setcap, and query these using getcap.
+
+```
+getcap /sbin/ping
+/sbin/ping = cap_net_raw+ep
+```
+This has initially been set by a user with cap_setfcap (root has it by default), via this command:
+```
+setcap cap_net_raw+ep /sbin/ping
+```
+You can find the list of capabilities via:
+```
+man capabilities
+```
+
+Capabilities can be used to improve security, but setting them blindly can be dangerous.
 
 ## Other useful stuff related to privesc
 
@@ -428,4 +449,6 @@ Watch this video!
 [http://www.slideshare.net/nullthreat/fund-linux-priv-esc-wprotections](http://www.slideshare.net/nullthreat/fund-linux-priv-esc-wprotections)
 
 [https://www.rebootuser.com/?page\_id=1721](https://www.rebootuser.com/?page_id=1721)
+
+[https://wiki.archlinux.org/index.php/Capabilities] (https://wiki.archlinux.org/index.php/Capabilities)
 
